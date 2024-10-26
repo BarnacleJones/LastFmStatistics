@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "LastFm Statistics";
+}
+@model int;
+
+<h2>LastFm Statistics</h2>
+<form id="myForm">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter UserName">
+    </div>
+    <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
+</form>
+
+<div id="ts-example">
+    <br />
+    <button type="button" class="btn btn-primary btn-md" onclick="TSButton()">
+        Click Me
+    </button>
+</div>
+
+<h1>@Model.ToString();</h1>
