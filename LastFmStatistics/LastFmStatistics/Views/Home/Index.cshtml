@@ -1,7 +1,8 @@
-﻿@{
+﻿@using LastFmStatistics.Service.Contract.Models
+@{
     ViewData["Title"] = "LastFm Statistics";
 }
-@model int;
+@model List<Scrobble>;
 
 <h2>LastFm Statistics</h2>
 <form id="myForm">
@@ -12,11 +13,26 @@
     <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
 </form>
 
-<div id="ts-example">
-    <br />
-    <button type="button" class="btn btn-primary btn-md" onclick="TSButton()">
-        Click Me
-    </button>
-</div>
 
-<h1>@Model.ToString();</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Artist</th>
+            <th scope="col">Album</th>
+            <th scope="col">Song</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var scrobble in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@scrobble.Artist</td>
+                <td>@scrobble.Album</td>
+                <td>@scrobble.Title</td>
+                <td>@scrobble.DateTime</td>
+            </tr>
+        }       
+    </tbody>
+</table>

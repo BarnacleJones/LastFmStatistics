@@ -18,8 +18,8 @@ namespace LastFmStatistics.Controllers
 
         public IActionResult Index()
         {
-            var a = _csvParser.TestDependency();
-            return View(1);
+            var a = _csvParser.GetScrobbles();
+            return View(a);
         }
 
         public IActionResult Privacy()

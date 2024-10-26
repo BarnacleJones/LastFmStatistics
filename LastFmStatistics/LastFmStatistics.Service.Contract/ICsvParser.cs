@@ -1,7 +1,9 @@
-﻿namespace LastFmStatistics.Service.Contract
+﻿using LastFmStatistics.Service.Contract.Models;
+
+namespace LastFmStatistics.Service.Contract
 {
     public interface ICsvParser
     {
-        int TestDependency();
+        List<Scrobble> GetScrobbles();
     }
 }
